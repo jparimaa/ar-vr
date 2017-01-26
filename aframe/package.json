@@ -1,6 +1,6 @@
 {
   "name": "a-frame_test",
-  "version": "1.0",
+  "version": "0.3.0",
   "license": "MIT",
   "scripts": {
     "start": "budo --live --verbose --port 3000 --open",
