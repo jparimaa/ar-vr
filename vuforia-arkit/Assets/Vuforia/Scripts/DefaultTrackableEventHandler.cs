@@ -14,10 +14,14 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+		public Vector3 initPosition = new Vector3();
+		public Quaternion initRotation = new Quaternion();
+		public GameObject track;
+
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
-    
+		    
         #endregion // PRIVATE_MEMBER_VARIABLES
 
 
@@ -52,6 +56,8 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
+				initPosition = track.transform.position;
+				initRotation = track.transform.rotation;
             }
             else
             {
