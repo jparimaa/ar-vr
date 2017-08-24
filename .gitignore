@@ -84,3 +84,6 @@ somedata16
 
 # Mac Artifacts
 .DS_Store
+
+# Other
+VuforiaConfiguration.a*
