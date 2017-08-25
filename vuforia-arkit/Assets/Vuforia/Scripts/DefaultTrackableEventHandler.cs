@@ -16,7 +16,9 @@ namespace Vuforia
     {
 		public Vector3 initPosition = new Vector3();
 		public Quaternion initRotation = new Quaternion();
+		public bool initialized = false;
 		public GameObject track;
+		public GameObject ARKit;
 
         #region PRIVATE_MEMBER_VARIABLES
  
@@ -56,8 +58,12 @@ namespace Vuforia
                 newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
             {
                 OnTrackingFound();
-				initPosition = track.transform.position;
-				initRotation = track.transform.rotation;
+				if (!initialized) {
+					initialized = true;
+					initPosition = track.transform.position;
+					initRotation = track.transform.rotation;
+					ARKit.SetActive(true);
+				}
             }
             else
             {

@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class DebugGUI : MonoBehaviour
 {
-	public Vuforia.DefaultTrackableEventHandler handler;
-
 	// Use this for initialization
 	void Start()
 	{
@@ -20,7 +18,8 @@ public class DebugGUI : MonoBehaviour
 
 	void OnGUI()
 	{
-		string s = handler.initPosition.ToString("F2") + "\n" + handler.initRotation.eulerAngles.ToString();
-		GUI.TextArea(new Rect(0, 0, 200, 100), s);
+		GUIStyle style = GUI.skin.GetStyle ("TextArea");
+		style.fontSize = 30;
+		GUI.TextArea(new Rect(0, 0, 200, 100), "Ready");
 	}
 }
